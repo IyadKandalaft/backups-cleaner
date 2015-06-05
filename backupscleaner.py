@@ -1,7 +1,9 @@
-from backupscleaner.builder import BackupsFileList
 from posix import mkdir
 import tempfile
+
+from backupscleaner.builder import BackupsFileList
 from backupscleaner.cleaner import BackupsCleaner
+
 
 def setup_test():
     temp_dir = tempfile.mkdtemp()
@@ -31,9 +33,9 @@ def setup_test():
 '/tmp/2015/04/22_abc.bak',
 '/tmp/2015/04/22_abc.bak')
 
-backups_list = BackupsFileList('/servershare/TV Shows/2 Broke girls')
+backups_list = BackupsFileList('/home/AAFC-AAC/kandalafti/workspace')
 
-print backups_list
+#print backups_list
 
 cleaner = BackupsCleaner(backups_list, daily=4)
 cleaner.clean()
